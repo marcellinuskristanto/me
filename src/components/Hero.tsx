@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Mail, Linkedin } from 'lucide-react';
+import { Download, Mail, Linkedin, Github } from 'lucide-react';
 import { personalInfo } from '../data/resume';
 
 const Hero: React.FC = () => {
@@ -60,14 +60,14 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="flex flex-wrap gap-4"
             >
-              <a
+              {/* <a
                 href="/resume.pdf"
                 download
                 className="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-200"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
-              </a>
+              </a> */}
               <a
                 href="#contact"
                 className="inline-flex items-center px-6 py-3 bg-white dark:bg-secondary-800 hover:bg-secondary-100 dark:hover:bg-secondary-700 text-primary-600 dark:text-primary-400 font-medium rounded-lg border border-primary-600 dark:border-primary-400 transition-colors duration-200"
@@ -91,6 +91,15 @@ const Hero: React.FC = () => {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-6 w-6" />
+              </a>
+              <a
+                href={`http://github.com${personalInfo.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary-600 hover:text-primary-600 dark:text-secondary-400 dark:hover:text-primary-400 transition-colors duration-200"
+                aria-label="Github"
+              >
+                <Github className="h-6 w-6" />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}

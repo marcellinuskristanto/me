@@ -81,20 +81,24 @@ const Projects: React.FC = () => {
                 <p className="text-secondary-600 dark:text-secondary-300 mb-4">
                   {project.description}
                 </p>
-
-                <div className="mb-4">
-                  <h4 className="text-lg font-semibold text-secondary-900 dark:text-white mb-2">
-                    Key Highlights
-                  </h4>
-                  <ul className="space-y-2">
-                    {project.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-600 mt-2 mr-2"></span>
-                        <span className="text-secondary-600 dark:text-secondary-300">{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                
+                {
+                  (project.highlights.length > 0) && (
+                    <div className="mb-4">
+                      <h4 className="text-lg font-semibold text-secondary-900 dark:text-white mb-2">
+                        Key Highlights
+                      </h4>
+                      <ul className="space-y-2">
+                        {project.highlights.map((highlight, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-600 mt-2 mr-2"></span>
+                            <span className="text-secondary-600 dark:text-secondary-300">{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )
+                }
 
                 <div className="flex flex-wrap gap-2 mt-4">
                   {project.skills.map((skill, i) => (

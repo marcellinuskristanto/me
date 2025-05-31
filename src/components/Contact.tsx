@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, MapPin, Mail, Linkedin } from 'lucide-react';
+import { Send, MapPin, Mail, Linkedin, Github } from 'lucide-react';
 import { personalInfo } from '../data/resume';
 
 const Contact: React.FC = () => {
@@ -204,6 +204,23 @@ const Contact: React.FC = () => {
                       className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200 mt-1 inline-block"
                     >
                       linkedin.com/in{personalInfo.linkedin}
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Github className="h-6 w-6 text-primary-600 dark:text-primary-400 mr-4 mt-1" />
+                  <div>
+                    <h4 className="text-lg font-medium text-secondary-900 dark:text-white">
+                      Github
+                    </h4>
+                    <a
+                      href={`https://github.com/${personalInfo.github}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200 mt-1 inline-block"
+                    >
+                      github.com/{personalInfo.github}
                     </a>
                   </div>
                 </div>
